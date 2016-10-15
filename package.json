@@ -1,0 +1,29 @@
+{
+  "name": "node-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binhxn/node-chat-app.git"
+  },
+  "engines": {
+    "node": "6.2.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binhxn/node-chat-app/issues"
+  },
+  "homepage": "https://github.com/binhxn/node-chat-app#readme",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

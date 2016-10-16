@@ -10,6 +10,9 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
+// var server = app.listen(3000);
+// var io = require('socket.io').listen(server);
+
 app.use(express.static(publicPath));
 
 /* Listens for a new connection
@@ -27,7 +30,7 @@ io.on('connection', (socket) => {
 
 	socket.on('createMessage', (message, callback) => {
 		console.log('createMessage: ', message);
-		io.emit('newMessages', generateMessage(message.from, message.text));
+		io.emit('newMessage', generateMessage(message.from, message.text));
 
 		callback('This is from the server');
 	});

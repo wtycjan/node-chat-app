@@ -10,9 +10,6 @@ var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
 
-// var server = app.listen(3000);
-// var io = require('socket.io').listen(server);
-
 app.use(express.static(publicPath));
 
 /* Listens for a new connection
@@ -33,6 +30,10 @@ io.on('connection', (socket) => {
 		io.emit('newMessage', generateMessage(message.from, message.text));
 
 		callback('This is from the server');
+	});
+
+	socket.on('createLocationMessage', (coords) => {
+		io.emit('newMessage', generateMessage('Admin', `${coords.latitude}, ${coords.longitutde}`))
 	});
 
 	socket.on('disconnect', () => {

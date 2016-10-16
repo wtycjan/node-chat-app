@@ -1,10 +1,10 @@
-const path = require('path');
-const http = require('http');
-const express = require('express');
-const socketIO = require('socket.io');
+var path = require('path');
+var http = require('http');
+var express = require('express');
+var socketIO = require('socket.io');
 
-const publicPath = path.join(__dirname, '../public');
-const port = process.env.PORT || 3000;
+var publicPath = path.join(__dirname, '../public');
+var port = process.env.PORT || 3000;
 var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);

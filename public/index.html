@@ -2,20 +2,27 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Node-Socket Chat App</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
-<body>
-	<p>Chat app</p>
+<body class="chat">
+	<div class="chat-sidebar">
+		<h3>People</h3>
+		<div id="users"></div>
+	</div>
 
-	<ol id="messages">
-		
-	</ol>
+	<div class="chat-main">
+		<ol id="messages" class="chat-messages"></ol>
 
-	<form id="message-form">
-		<input name="message" type="text" placeholder="Message"/>
-		<button>Send</button>
-	</form>
-	<button id="send-location">Send Location</button>
+		<div class="chat-footer">
+			<form id="message-form">
+				<input name="message" type="text" placeholder="Message" autofocus autocomplete="off" />
+				<button>Send</button>
+			</form>
+			<button id="send-location">Send location</button>
+		</div>
+	</div>
+
 
 	<script type="text/javascript" src='/socket.io/socket.io.js'></script>
 	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

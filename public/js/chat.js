@@ -44,7 +44,7 @@ socket.on('updateUserList', function(users) {
 	$('#users').html(ol);
 });
 
-
+// Mustache template for newMessage
 socket.on('newMessage', function(message) {
 	var template = $('#message-template').html();
 	var formattedTime = moment(message.createdAt).format('h:mm a');
@@ -58,6 +58,7 @@ socket.on('newMessage', function(message) {
 	scrollToBottom();
 });
 
+// Mustache template for newLocationMessage
 socket.on('newLocationMessage', function(message) {
 	var template = $('#location-message-template').html();
 	var formattedTime = moment(message.createdAt).format('h:mm a');
@@ -110,7 +111,3 @@ locationButton.on('click', function() {
 		alert('Unable to fetch location');
 	});
 });
-
-
-
-

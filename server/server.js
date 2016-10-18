@@ -20,17 +20,20 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
 	console.log('New user connected');
 
-	// Emits an event to a single connection
-	socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
-
-	// Emits to every connection but current user
-	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
-
 	// Grab user name and chat room url parameters
 	socket.on('join', (params, callback) => {
 		if (!isRealString(params.name) || !isRealString(params.room)) {
 			callback('Name and room name are required.');
 		}
+
+		// When user submits proper info, join proper room
+		socket.join(params.room);
+
+		// Emits an event to a single connection
+		socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+
+		// Emits to every connection (in the room) except current user
+		socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined`));
 
 		callback();
 	});

@@ -4,7 +4,7 @@
 
 ![Chat Page](http://i.imgur.com/6LIBqwy.png)
 
-Check out the application deployed on Heroku! https://desolate-fjord-74477.herokuapp.com/
+Check out the chat application deployed on Heroku! https://desolate-fjord-74477.herokuapp.com/
 
 Technologies used in this project include:
 

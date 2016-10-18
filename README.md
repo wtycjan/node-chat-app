@@ -5,11 +5,16 @@
 ![Chat Page](http://i.imgur.com/6LIBqwy.png)
 
 Check out the chat application deployed on Heroku! https://desolate-fjord-74477.herokuapp.com/
+  - Simply open up two or more windows/tabs.
+  - Join the same room (case sensitive).
+  - Chat like crazy!
+  - Send your location through coordinates! (Geolocation special feature)
 
-Technologies used in this project include:
+###Technologies used in this project include:
 
   - Node/Express
   - Socket.io
+  - Geolocation API
   - ES6
   - Mustache.js
   - Moment.js

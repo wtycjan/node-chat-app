@@ -1,6 +1,10 @@
 # Node Chat App
 
-Check out the application deployed on Heroku! 
+![Chat Login](http://i.imgur.com/W6xGZra.png)
+
+![Chat Page](http://i.imgur.com/6LIBqwy.png)
+
+Check out the application deployed on Heroku! https://desolate-fjord-74477.herokuapp.com/
 
 Technologies used in this project include:
 
@@ -18,7 +22,7 @@ Technologies used in this project include:
 	cd node-chat-app
 	npm install
 
-## Running Program
+## Run Server
 
 	npm run dev
 

@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo 'Building'
                 nodejs('npm') {
-                    npm install
-                    npm run build
+                    sh 'npm install'
+                    sh 'npm run build'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 nodejs('npm') {
-                    npm run test
+                    sh 'npm run test'
                 }
             }
         }

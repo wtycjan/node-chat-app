@@ -17,8 +17,9 @@ pipeline {
             }
         }
         stage('Test') { 
+            echo 'currentBuild.currentResult'
             when{
-                expression {${currentBuild.currentResult} == "SUCCESS" }
+                expression {currentBuild.currentResult == "SUCCESS" }
             }
             steps {
                 echo 'Testing'

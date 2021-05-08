@@ -5,6 +5,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building'
+                sh 'git pull origin master'
                 nodejs('npm') {
                     sh 'npm install'
                 }

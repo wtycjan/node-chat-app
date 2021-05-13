@@ -35,6 +35,3 @@ Check out the chat application deployed on Heroku! https://desolate-fjord-74477.
 
 	npm run test
 	
-	
-
-

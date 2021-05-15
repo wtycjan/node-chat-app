@@ -21,6 +21,7 @@ Check out the chat application deployed on Heroku! https://desolate-fjord-74477.
   - jQuery
   - Mocha / Expect
 
+
 ## Installation
 
 	git clone https://github.com/binhxn/node-chat-app.git

@@ -28,25 +28,34 @@ pipeline {
                 }
             }
         }
-    }
 
-    post {
-        failure {
-            echo 'Success'
-            emailext attachLog: true,
-                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
-                recipientProviders: [developers(), requestor()],
-                to: 'wtycjan@gmail.com',
-                subject: "Build failed in Jenkins"
-        }
-        success {
-            echo 'Fail'
-            emailext attachLog: true,
-                body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
-                recipientProviders: [developers(), requestor()],
-                to: 'wtycjan@gmail.com',
-                subject: "Successful build in Jenkins"
-        }
-    }
-}
+	 stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+		        sh 'docker build -t komunikator-deploy Dockerfile .'
+            }
+	   post {
+		success {
+		    emailext attachLog: true,
+		        body: "${currentBuild.currentResult} in job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
+		        recipientProviders: [developers(), requestor()],
+		        to: 'klaaudia.baran@gmail.com',
+		        subject: "JENKINS successful deploy"
+		}
+		failure {
+		    emailext attachLog: true,
+		        body: "${currentBuild.currentResult} in job ${env.JOB_NAME} build ${env.BUILD_NUMBER}",
+		        recipientProviders: [developers(), requestor()],
+		        to: 'klaaudia.baran@gmail.com',
+		        subject: "JENKINS deploy failed"
+		}
+		
+	 }
+	}
+   }        
+ }
+    
+    
+
+
 

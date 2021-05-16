@@ -32,7 +32,7 @@ pipeline {
 	 stage('Deploy') {
             steps {
                 echo 'Deploying..'
-		
+		sh 'docker build -t komunikator-deploy .'
             }
 	   post {
 		success {
